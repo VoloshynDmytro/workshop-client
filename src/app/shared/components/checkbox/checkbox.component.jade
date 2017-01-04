@@ -1,0 +1,10 @@
+input(#cb,
+  type="checkbox",
+  [name]="name",
+  [value]="value",
+  [checked]="checked",
+  (focus)="onFocus($event)",
+  (blur)="onBlur($event)",
+  [ngClass]="{'focused': focused, 'disabled': disabled}")
+label((click)="onClick($event, cb, true)")
+  | {{label}}

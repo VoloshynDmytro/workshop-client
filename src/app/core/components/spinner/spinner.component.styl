@@ -1,0 +1,63 @@
+.spinner
+  &__overlay
+    background-color: #000
+    opacity: 0
+    display: none
+    &.in
+      position: fixed
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 1040
+      cursor: wait
+      opacity: 1
+      display: block
+      background: transparent
+      &:after
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        position: absolute
+        background: #000
+        opacity: .7
+        content: ""
+  &__container
+    width: 100px
+    height: 40px
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: -20px -50px
+    z-index: 1041
+
+  &__item
+    width: 20px
+    height: 20px
+    background: blue
+    border-radius: 50%
+    position: absolute
+
+#first-spin
+  animation: animate 2s linear infinite
+#second-spin
+  animation: animate 2s linear infinite -.4s
+#third-spin
+  animation: animate 2s linear infinite -.8s
+#fourth-spin
+  animation: animate 2s linear infinite -1.2s
+#fifth-spin
+  animation: animate 2s linear infinite -1.6s
+
+@keyframes animate {
+  0% { left: 100px; top:0}
+  80% { left: 0; top:0;}
+  85% { left: 0; top: -20px; width: 20px; height: 20px;}
+  90% { width: 40px; height: 15px; }
+  95% { left: 100px; top: -20px; width: 20px; height: 20px;}
+  100% { left: 100px; top: 0; }
+}
+
+
+
